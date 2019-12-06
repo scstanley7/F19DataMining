@@ -1,0 +1,756 @@
+[
+  {
+    "op": "core/column-removal",
+    "columnName": "Column",
+    "description": "Remove column Column"
+  },
+  {
+    "op": "core/row-reorder",
+    "mode": "row-based",
+    "sorting": {
+      "criteria": [
+        {
+          "valueType": "string",
+          "column": "DRUG",
+          "blankPosition": 2,
+          "errorPosition": 1,
+          "reverse": false,
+          "caseSensitive": false
+        }
+      ]
+    },
+    "description": "Reorder rows"
+  },
+  {
+    "op": "core/blank-down",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "SUBJECT_ID",
+    "description": "Blank down cells in column SUBJECT_ID"
+  },
+  {
+    "op": "core/row-removal",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "SUBJECT_ID",
+          "expression": "isBlank(value)",
+          "columnName": "SUBJECT_ID",
+          "invert": false,
+          "omitBlank": false,
+          "omitError": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectBlank": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "description": "Remove rows"
+  },
+  {
+    "op": "core/row-reorder",
+    "mode": "row-based",
+    "sorting": {
+      "criteria": [
+        {
+          "valueType": "number",
+          "column": "SUBJECT_ID",
+          "blankPosition": 2,
+          "errorPosition": 1,
+          "reverse": false
+        }
+      ]
+    },
+    "description": "Reorder rows"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "DRUG_TYPE",
+    "description": "Remove column DRUG_TYPE"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "DRUG",
+    "expression": "grel:if(value ==\"D5W\", \"true\", \"false\")",
+    "onError": "set-to-blank",
+    "newColumnName": "D5W",
+    "columnInsertIndex": 2,
+    "description": "Create column D5W at index 2 based on column DRUG using expression grel:if(value ==\"D5W\", \"true\", \"false\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "DRUG",
+    "expression": "grel:if(value ==\"Furosemide\", \"true\", \"false\")",
+    "onError": "set-to-blank",
+    "newColumnName": "Furosemide",
+    "columnInsertIndex": 2,
+    "description": "Create column Furosemide at index 2 based on column DRUG using expression grel:if(value ==\"Furosemide\", \"true\", \"false\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "DRUG",
+    "expression": "grel:if(value == \"Insulin\", \"true\", \"false\")",
+    "onError": "set-to-blank",
+    "newColumnName": "Insulin",
+    "columnInsertIndex": 2,
+    "description": "Create column Insulin at index 2 based on column DRUG using expression grel:if(value == \"Insulin\", \"true\", \"false\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "DRUG",
+    "expression": "grel:if(value == \"Iso-Osmotic Dextrose\", \"true\", \"false\")",
+    "onError": "set-to-blank",
+    "newColumnName": "Iso-Osmotic Dextrose",
+    "columnInsertIndex": 2,
+    "description": "Create column Iso-Osmotic Dextrose at index 2 based on column DRUG using expression grel:if(value == \"Iso-Osmotic Dextrose\", \"true\", \"false\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "DRUG",
+    "expression": "grel:if(value == \"Magnesium Sulfate\", \"true\", \"false\")",
+    "onError": "set-to-blank",
+    "newColumnName": "Magnesium Sulfate",
+    "columnInsertIndex": 2,
+    "description": "Create column Magnesium Sulfate at index 2 based on column DRUG using expression grel:if(value == \"Magnesium Sulfate\", \"true\", \"false\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "DRUG",
+    "expression": "grel:if(value == \"Metoprolol\", \"true\", \"false\")",
+    "onError": "set-to-blank",
+    "newColumnName": "Metoprolol",
+    "columnInsertIndex": 2,
+    "description": "Create column Metoprolol at index 2 based on column DRUG using expression grel:if(value == \"Metoprolol\", \"true\", \"false\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "DRUG",
+    "expression": "grel:if(value == \"NS\", \"true\", \"false\")",
+    "onError": "set-to-blank",
+    "newColumnName": "NS",
+    "columnInsertIndex": 2,
+    "description": "Create column NS at index 2 based on column DRUG using expression grel:if(value == \"NS\", \"true\", \"false\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "DRUG",
+    "expression": "grel:if(value == \"SW\", \"true\", \"false\")",
+    "onError": "set-to-blank",
+    "newColumnName": "SW",
+    "columnInsertIndex": 2,
+    "description": "Create column SW at index 2 based on column DRUG using expression grel:if(value == \"SW\", \"true\", \"false\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "DRUG",
+    "expression": "grel:if(value == \"Potassium Chloride\", \"true\", \"false\")",
+    "onError": "set-to-blank",
+    "newColumnName": "Potassium Chloride",
+    "columnInsertIndex": 2,
+    "description": "Create column Potassium Chloride at index 2 based on column DRUG using expression grel:if(value == \"Potassium Chloride\", \"true\", \"false\")"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "DRUG",
+    "expression": "grel:if(value == \"Heparin Sodium\", \"true\", \"false\")",
+    "onError": "set-to-blank",
+    "newColumnName": "Heparin Sodium",
+    "columnInsertIndex": 2,
+    "description": "Create column Heparin Sodium at index 2 based on column DRUG using expression grel:if(value == \"Heparin Sodium\", \"true\", \"false\")"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "DRUG",
+    "description": "Remove column DRUG"
+  },
+  {
+    "op": "core/blank-down",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "SUBJECT_ID",
+    "description": "Blank down cells in column SUBJECT_ID"
+  },
+  {
+    "op": "core/multivalued-cell-join",
+    "columnName": "Heparin Sodium",
+    "keyColumnName": "SUBJECT_ID",
+    "separator": ", ",
+    "description": "Join multi-valued cells in column Heparin Sodium"
+  },
+  {
+    "op": "core/multivalued-cell-join",
+    "columnName": "Potassium Chloride",
+    "keyColumnName": "SUBJECT_ID",
+    "separator": ", ",
+    "description": "Join multi-valued cells in column Potassium Chloride"
+  },
+  {
+    "op": "core/multivalued-cell-join",
+    "columnName": "SW",
+    "keyColumnName": "SUBJECT_ID",
+    "separator": ", ",
+    "description": "Join multi-valued cells in column SW"
+  },
+  {
+    "op": "core/multivalued-cell-join",
+    "columnName": "NS",
+    "keyColumnName": "SUBJECT_ID",
+    "separator": ", ",
+    "description": "Join multi-valued cells in column NS"
+  },
+  {
+    "op": "core/multivalued-cell-join",
+    "columnName": "Metoprolol",
+    "keyColumnName": "SUBJECT_ID",
+    "separator": ", ",
+    "description": "Join multi-valued cells in column Metoprolol"
+  },
+  {
+    "op": "core/multivalued-cell-join",
+    "columnName": "Magnesium Sulfate",
+    "keyColumnName": "SUBJECT_ID",
+    "separator": ", ",
+    "description": "Join multi-valued cells in column Magnesium Sulfate"
+  },
+  {
+    "op": "core/multivalued-cell-join",
+    "columnName": "Iso-Osmotic Dextrose",
+    "keyColumnName": "SUBJECT_ID",
+    "separator": ", ",
+    "description": "Join multi-valued cells in column Iso-Osmotic Dextrose"
+  },
+  {
+    "op": "core/multivalued-cell-join",
+    "columnName": "Insulin",
+    "keyColumnName": "SUBJECT_ID",
+    "separator": ", ",
+    "description": "Join multi-valued cells in column Insulin"
+  },
+  {
+    "op": "core/multivalued-cell-join",
+    "columnName": "Furosemide",
+    "keyColumnName": "SUBJECT_ID",
+    "separator": ", ",
+    "description": "Join multi-valued cells in column Furosemide"
+  },
+  {
+    "op": "core/multivalued-cell-join",
+    "columnName": "D5W",
+    "keyColumnName": "SUBJECT_ID",
+    "separator": ", ",
+    "description": "Join multi-valued cells in column D5W"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "Heparin Sodium",
+          "columnName": "Heparin Sodium",
+          "query": "true",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "Heparin Sodium",
+    "expression": "grel:\"true\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Heparin Sodium using expression grel:\"true\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "Heparin Sodium",
+          "columnName": "Heparin Sodium",
+          "query": "false",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "Heparin Sodium",
+    "expression": "grel:\"false\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Heparin Sodium using expression grel:\"false\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "Potassium Chloride",
+          "columnName": "Potassium Chloride",
+          "query": "true",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "Potassium Chloride",
+    "expression": "grel:\"true\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Potassium Chloride using expression grel:\"true\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "Potassium Chloride",
+          "columnName": "Potassium Chloride",
+          "query": "false",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "Potassium Chloride",
+    "expression": "grel:\"false\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Potassium Chloride using expression grel:\"false\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "SW",
+          "columnName": "SW",
+          "query": "true",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "SW",
+    "expression": "grel:\"true\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column SW using expression grel:\"true\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "SW",
+          "columnName": "SW",
+          "query": "false",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "SW",
+    "expression": "grel:\"false\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column SW using expression grel:\"false\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "NS",
+          "columnName": "NS",
+          "query": "true",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "NS",
+    "expression": "grel:\"true\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column NS using expression grel:\"true\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "NS",
+          "columnName": "NS",
+          "query": "false",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "NS",
+    "expression": "grel:\"false\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column NS using expression grel:\"false\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "Metoprolol",
+          "columnName": "Metoprolol",
+          "query": "true",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "Metoprolol",
+    "expression": "grel:\"true\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Metoprolol using expression grel:\"true\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "Metoprolol",
+          "columnName": "Metoprolol",
+          "query": "false",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "Metoprolol",
+    "expression": "grel:\"false\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Metoprolol using expression grel:\"false\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "Magnesium Sulfate",
+          "columnName": "Magnesium Sulfate",
+          "query": "true",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "Magnesium Sulfate",
+    "expression": "grel:\"true\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Magnesium Sulfate using expression grel:\"true\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "Magnesium Sulfate",
+          "columnName": "Magnesium Sulfate",
+          "query": "false",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "Magnesium Sulfate",
+    "expression": "grel:\"false\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Magnesium Sulfate using expression grel:\"false\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "Iso-Osmotic Dextrose",
+          "columnName": "Iso-Osmotic Dextrose",
+          "query": "true",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "Iso-Osmotic Dextrose",
+    "expression": "grel:\"true\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Iso-Osmotic Dextrose using expression grel:\"true\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "Iso-Osmotic Dextrose",
+          "columnName": "Iso-Osmotic Dextrose",
+          "query": "false",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "Iso-Osmotic Dextrose",
+    "expression": "grel:\"false\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Iso-Osmotic Dextrose using expression grel:\"false\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "Insulin",
+          "columnName": "Insulin",
+          "query": "true",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "Insulin",
+    "expression": "grel:\"true\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Insulin using expression grel:\"true\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "Insulin",
+          "columnName": "Insulin",
+          "query": "false",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "Insulin",
+    "expression": "grel:\"false\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Insulin using expression grel:\"false\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "Furosemide",
+          "columnName": "Furosemide",
+          "query": "true",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "Furosemide",
+    "expression": "grel:\"true\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Furosemide using expression grel:\"true\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "Furosemide",
+          "columnName": "Furosemide",
+          "query": "false",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "Furosemide",
+    "expression": "grel:\"false\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Furosemide using expression grel:\"false\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "D5W",
+          "columnName": "D5W",
+          "query": "true",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "D5W",
+    "expression": "grel:\"true\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column D5W using expression grel:\"true\""
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "text",
+          "name": "D5W",
+          "columnName": "D5W",
+          "query": "False",
+          "mode": "text",
+          "caseSensitive": false,
+          "invert": false
+        }
+      ],
+      "mode": "record-based"
+    },
+    "columnName": "D5W",
+    "expression": "grel:\"false\"",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column D5W using expression grel:\"false\""
+  }
+]
